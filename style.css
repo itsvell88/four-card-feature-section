@@ -1,0 +1,280 @@
+/* RESET DEFAULT STYLING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+    /* Container Level Color */
+    --level1-con: 1px solid red;
+    --level2-con: 1px solid cyan;
+    --level3-con: 1px solid magenta;
+    --level4-con: 1px solid greenyellow;
+    --level5-con: 1px solid blue;
+
+    /* Color Palette */
+    --cp-red: hsl(0, 78%, 62%);
+    --cp-cyan: hsl(180, 62%, 55%);
+    --cp-orange: hsl(34, 97%, 64%);
+    --cp-blue: hsl(212, 86%, 64%);
+    --cp-grey500: hsl(234, 12%, 34%);
+    --cp-grey400: hsl(212, 6%, 44%);
+    --cp-neutralwhite: hsl(0, 0%, 98%);
+}
+
+/* BASE STYLE ---------------------------------------------------------------------------- */
+
+/* New Default Styling */
+body {
+    background-color: var(--cp-neutralwhite);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Poppins;
+}
+
+/* Main Styling */
+main {
+    /*outline: var(--level1-con); /* testing purpose */
+    width: 83%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.75rem;
+    gap: 6em;
+    margin: 4.7em auto;
+    flex: 1; /* fills up area around main */
+}
+
+/* .row1.con, .row2.con { outline: var(--level2-con); /* testing purpose } */
+
+.row1.con {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 0.75rem;
+    gap: 1.5em;
+}
+
+h1, h2 {
+    color: var(--cp-grey500);
+    font-weight: 600;
+}
+
+.title-thin {
+    color: var(--cp-grey400);
+    font-weight: 200;
+}
+
+p {
+    color: var(--cp-grey400);
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.row2.con {
+    /* background-color: cyan; /* testing purpose */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.85rem;
+    gap: 2.5em;
+}
+
+.col1.con,
+.col2.con,
+.col3.con {
+    /* background-color: magenta; /* testing purpose */
+    /* outline: var(--level3-con); /* testing purpose */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.col2.con {
+    font-size: 0.85rem;
+    gap: 2.5em;
+}
+
+.card1.con,
+.card2.con,
+.card3.con,
+.card4.con {
+    /* outline: var(--level4-con); /* testing purpose */
+    background-color: var(--cp-neutralwhite);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.85rem;
+    padding: 3em 2.5em 3em;
+    gap: 2.8em;
+    border-radius: 1rem;
+    box-shadow: 0px 12px 20px 0px hsla(234, 12%, 34%, 0.2);
+    overflow: hidden; /* clip children to con shape */
+    position: relative; /* makes the card as reference point for it's children */
+}
+
+.line {
+    background-color: blue; /* placeholder */
+    height: 6px;
+    position: absolute; /* ignore normal flow & reference nearest relative parent */
+    top: 0;
+    left: 0;
+    right: 0; /* make sure line sticks to the top */
+}
+
+.line1 {
+    background-color: var(--cp-cyan);
+}
+
+.line2 {
+    background-color: var(--cp-red);
+}
+
+.line3 {
+    background-color: var(--cp-orange);
+}
+
+.line4 {
+    background-color: var(--cp-blue);
+}
+
+.feature-text {
+    /* outline: var(--level5-con); /* testing purpose */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    font-size: 0.85rem;
+    gap: 0.6em;
+}
+
+.feature-body {
+    font-size: 0.85rem;
+}
+
+.feature.icon {
+    /* outline: var(--level5-con); /* testing purpose */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+footer {
+    background-color: var(--cp-grey500);
+    width: 100%;
+    color: var(--cp-neutralwhite);
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8rem;
+    padding: 1em;
+    text-align: center;
+}
+
+a {
+    color: var(--cp-orange);
+}
+
+/* TABLET ---------------------------------------------------------------------------- */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Main Styling */
+    main {
+        width: 90%;
+        margin: 8%;
+    }
+
+    .row1.con {
+        font-size: 0.95rem;
+        padding: 0% 20%;
+    }
+
+    .row2.con {
+        flex-direction: row;
+    }
+}
+
+/* SMALL DESKTOP ---------------------------------------------------------------------------- */
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+    /* Main Styling */
+    main {
+        width: 90%;
+        font-size: 1.14rem;
+        gap: 5em;
+        margin: 8% 0%;
+    }
+
+    .row1.con {
+        font-size: 1.14rem;
+        gap: 0.8em;
+        padding: 0% 23%;
+    }
+
+    .row2.con {
+        flex-direction: row;
+    }
+}
+
+/* DESKTOP ---------------------------------------------------------------------------- */
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+    /* Main Styling */
+    main {
+        width: 85%;
+        font-size: 1.14rem;
+        gap: 5em;
+        margin: 8%;
+    }
+
+    .row1.con {
+        font-size: 1.14rem;
+        gap: 0.8em;
+        padding: 0% 24%;
+    }
+
+    .row2.con {
+        flex-direction: row;
+    } 
+}
+
+/* LARGE DESKTOP ---------------------------------------------------------------------------- */
+
+@media (min-width: 1401px) {
+    /* Main Styling */
+    main {
+        width: 75%;
+        font-size: 1.14rem;
+        gap: 5em;
+        margin: 8%;
+    }
+
+    .row1.con {
+        font-size: 1.14rem;
+        gap: 0.8em;
+        padding: 0% 26%;
+    }
+
+    .row2.con {
+        flex-direction: row;
+    }
+
+    .feature-text {
+        padding-right: 5%;
+    }
+}
